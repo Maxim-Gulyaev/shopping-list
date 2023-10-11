@@ -5,6 +5,6 @@ import com.maxim.domain.model.ShoppingList
 
 class AddItemUseCase {
     fun execute(item: Item, shoppingList: ShoppingList) {
-        shoppingList.shoppingList.add(item)
+        shoppingList.listOfShopping.add(item)
     }
 }

@@ -5,5 +5,5 @@ import com.maxim.domain.model.ShoppingList
 
 class RemoveItemUseCase {
     fun execute(item: Item, shoppingList: ShoppingList): Boolean =
-        shoppingList.shoppingList.remove(item)
+        shoppingList.listOfShopping.remove(item)
 }
