@@ -20,17 +20,16 @@ class RemoveItemUseCaseTest {
 
     @Test
     fun `should remove the item from list`() {
+        // Arrange
         val item1 = Item("Item 1")
         val item2 = Item("Item 2")
-
-        // Add items to the shopping list
         shoppingList.listOfShopping.add(item1)
         shoppingList.listOfShopping.add(item2)
 
-        // Remove an item
+        // Act
         val result = removeItemUseCase.execute(item1, shoppingList)
 
-        // Verify that the item was removed
+        // Assert
         assertTrue(result)
         assertFalse(shoppingList.listOfShopping.contains(item1))
         assertEquals(1, shoppingList.listOfShopping.size)
@@ -38,18 +37,17 @@ class RemoveItemUseCaseTest {
 
     @Test
     fun `should not remove not existing item from list`() {
+        // Arrange
         val item1 = Item("Item 1")
         val item2 = Item("Item 2")
         val itemToRemove = Item("Item to Remove")
-
-        // Add items to the shopping list
         shoppingList.listOfShopping.add(item1)
         shoppingList.listOfShopping.add(item2)
 
-        // Attempt to remove a non-existing item
+        // Act
         val result = removeItemUseCase.execute(itemToRemove, shoppingList)
 
-        // Verify that the item was not removed
+        // Assert
         assertFalse(result)
         assertEquals(2, shoppingList.listOfShopping.size)
     }
