@@ -33,7 +33,7 @@ class RemoveItemUseCaseTest {
         // Verify that the item was removed
         assertTrue(result)
         assertFalse(shoppingList.listOfShopping.contains(item1))
-        assertEquals(1, shoppingList.listOfShopping.size) // Ensure that only one item is left in the list
+        assertEquals(1, shoppingList.listOfShopping.size)
     }
 
     @Test
@@ -51,6 +51,6 @@ class RemoveItemUseCaseTest {
 
         // Verify that the item was not removed
         assertFalse(result)
-        assertEquals(2, shoppingList.listOfShopping.size) // Ensure that no items were removed from the list
+        assertEquals(2, shoppingList.listOfShopping.size)
     }
 }
